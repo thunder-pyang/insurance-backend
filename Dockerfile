@@ -6,4 +6,3 @@ COPY poetry.lock pyproject.toml /app/
 RUN poetry install
 COPY . .
 CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0"]
-RUN chgrp -R 0 /.cache && chmod -R g=u /.cache
